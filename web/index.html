@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+    <body>  
+        <form method="POST">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="first">
+            <br>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="last">
+            <br>
+            <label for="faveNum">Favorite Number</label>
+            <input type="text" id="faveNum" name="number">
+            <br>
+            <label for="meatNum">Number of meat toppings</label>
+            <input type="text" id="meatNum" name="meatNum">
+            <br>
+            <label for="vegNum">Number Veggie toppings</label>
+            <input type="text" id="vegNum" name="vegNum">
+            <br>
+            <label for="cheeseNum">Number of extra cheeses</label>
+            <input type="text" id="cheeseNum" name="cheeseNum">
+            <br>
+            <input type="submit">
+        </form>
+        
+        <h1>Pizza</h1>
+        <p>You should order a {{.Crust}} crust with {{.Sauce}} on it</p>
+        <h2>Put these cheeses on it:</h2>
+        <ul>
+            {{range .Cheeses}}
+            <li>{{.}}</li>
+            {{end}}
+        </ul>
+        <h2>Put these meats on it:</h2>
+        <ul>
+            {{range .Meats}}
+            <li>{{.}}</li>
+            {{end}}
+        </ul>
+        <h2>Put these veggies on it:</h2>
+        <ul>
+            {{range .Veggies}}
+            <li>{{.}}</li>
+            {{end}}
+        </ul>
+    </body>
+</html>
